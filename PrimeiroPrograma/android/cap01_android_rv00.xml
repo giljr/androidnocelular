@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Configurando o ambiente <trademark
+  class="registered">Android</trademark></title>
+
+  <section>
+    <title>Introduç&#227;o</title>
+
+    <para>Voc&#234; configura o seu ambiente para desenvolver aplicaç&#245;es
+    <emphasis>Android</emphasis> em um máquina-host.</para>
+
+    <para>Falando mais claramente, voc&#234; cria os aplicativos em um
+    computador abundante de recursos e os envia
+    (<emphasis>uploading</emphasis>) a um celular de destino, que possui
+    restriç&#245;es de memória e armazenamentos.</para>
+
+    <para>Porém, mesmo sem o aparelho de celular real, voc&#234; pode testar
+    suas aplicaç&#245;es em emuladores; essa será nossa
+    aproximaç&#227;o.</para>
+
+    <para>Aqui explicamos os passos necessários para voc&#234; ter o
+    <emphasis>Android</emphasis> pronto para rodar em sua máquina.</para>
+
+    <para>Utilizamos como máquina-host uma plataforma rodando o Ubuntu 9.04 -
+    o Jaunty Jackalope - distribuiç&#227;o Linux, lançada em abril de
+    2009.</para>
+
+    <para>M&#227;os a obra !</para>
+  </section>
+
+  <section>
+    <title>Uso do Eclipse</title>
+
+    <para>Como Ambiente de Desenvolvimento Integrado (<emphasis>Integrated
+    Development Environment - IDE</emphasis>) usaremos o <trademark
+    class="registered">Eclipse</trademark>.</para>
+
+    <para>O Eclipse é a IDE que apresenta a melhor integraç&#227;o com o SDK
+    do <emphasis>Android</emphasis>, além de ser livre; o
+    <emphasis>plug-in</emphasis>, instrumentaç&#227;o dessa integraç&#227;o, é
+    mantido pela <trademark>Google</trademark>.</para>
+
+    <para>Voc&#234; pode usar o <trademark
+    class="registered">NetBeans</trademark>IDE; porém seu plug-in é
+    responsabilidade de terceiros e voc&#234; terá que preparar a plataforma
+    por sua conta.</para>
+
+    <para>Se voc&#234; ainda n&#227;o tem o Eclipse instalado, acesse <link
+    linkend="???">http://eclipse.org/downloads</link> para obt&#234;-lo.
+    Escolha a vers&#227;o mais atual; usaremos a <emphasis>vers&#227;o
+    3.5.0</emphasis> (conhecida como <firstterm>Galileo</firstterm>); a figura
+    abaixo mostra a configuraç&#227;o da plataforma utilizada nesse tutorial
+    (o <firstterm>robô verde</firstterm> <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/robo_android.gif" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject> denuncia que o<emphasis> Android Development
+    Tollkit 0.9.5v</emphasis> - ADT está devidamente instalado - assunto desse
+    capítulo):</para>
+
+    <figure>
+      <title>Nossa plataforma host</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/00_intro.png" scale="70" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Basicamente, o seguinte conjunto de <emphasis>software</emphasis> e
+    ferramentas ser&#227;o necessários:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Kit de desenvolvimento para Java da Sun (JDK); usamos java
+        version "1.6.0_16" Java(TM) SE Runtime Environment (build
+        1.6.0_16-b01) Java HotSpot(TM) Server VM (build 14.2-b01, mixed
+        mode);</para>
+      </listitem>
+
+      <listitem>
+        <para>O Eclipse IDE; temos o Galileo instalado;</para>
+      </listitem>
+
+      <listitem>
+        <para>Ferramenta para desenvolvimento Android (ADT), um
+        <emphasis>plug-in</emphasis> especializado mantido pela Google;</para>
+      </listitem>
+
+      <listitem>
+        <para>Kit de desenvolvimento de software Android (ANDROID SDK);</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>Como os dois primeiros <emphasis>software</emphasis> s&#227;o
+    próprios de qualquer desenvolvimento em Java, vamos nos concentrar no
+    terceiro item em diante:</para>
+  </section>
+
+  <section>
+    <title>Instalando o ADT</title>
+
+    <para>A Ferramenta de Desenvolvimento Android (Android Development
+    Toolkit) é um <emphasis>plug-in</emphasis> desenvolvido e mantido pela
+    <trademark>Google</trademark>.</para>
+
+    <para>É uma excelente interface gráfica, com considerável abstraç&#227;o;
+    sem esse <emphasis>plug-in</emphasis> teríamos que digitar na linha de
+    comando (shell no linux, ou prompt de comando no Windows) para obter
+    resultados semelhantes.</para>
+
+    <para>Abra o Eclipse.</para>
+
+    <para>Acione e preencha a janela abaixo, selecionando-a no menu
+    <guimenuitem>Help &gt; Install New Software...</guimenuitem> e
+    pressionando <guimenuitem>Add...</guimenuitem> ;</para>
+
+    <figure>
+      <title>Digite: o link : <link
+      linkend="???">https:dl-ssl.google.com/android/eclipse/</link> e
+      pressione o bot&#227;o OK</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/01_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Selecione todas as ferramentas oferecidas : Android DDMS e ADT,
+    conforme figura abaixo:</para>
+
+    <figure>
+      <title>Baixe todas as ferramentas disponíveis</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/02_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Pressione Next... e na tela seguinte leia, se quiser, e/ou aceite os
+    termos de uso, selecionando <guimenuitem>I Accept the terms of license
+    agreements</guimenuitem>, para finalmente pressionar
+    <guimenuitem>Finish</guimenuitem> para dar início ao downloads do
+    <emphasis>plug-in</emphasis>.</para>
+
+    <figure>
+      <title>Leia o acordo de uso</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/04_intro.png" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>O downloads é relativamente demorado e dependente do seu
+    <emphasis>link</emphasis>. Tenha um pouco de paci&#234;ncia. abaixo a
+    apar&#234;ncia da tela nessa fase:</para>
+
+    <figure>
+      <title>Procedendo ao Download do plug-in</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/05_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Ao termino do <emphasis>Download</emphasis>, o Eclipse recomenda que
+    se re-inicialize a plataforma; Pressione <guimenuitem>YES</guimenuitem> e
+    aguarde a re-entrada do Eclipse:</para>
+
+    <figure>
+      <title>Re-inicialize o Eclipse</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/06_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Ao reabrir o Eclipse voc&#234; notará a figura de um pequeno celular
+    <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/celularzinho.gif" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject> na barra de ferramentas; pressionando-o voc&#234;
+    configura o Android SDK e o AVD, assuntos seguintes.</para>
+
+    <para>Vamos, antes, buscar o<emphasis> Android SDK</emphasis> na
+    internet;</para>
+
+    <para>Nessa próxima janela apontaremos nosso <emphasis>browser</emphasis>
+    ao <emphasis>Android SDK</emphasis> conforme <emphasis>link</emphasis>
+    abaixo:</para>
+
+    <figure>
+      <title>Digite <link
+      linkend="???">http://developer.android.com/sdk/index.html</link></title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/08_intro.png" scale="45" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Escolha o pacote próprio da sua plataforma e baixe o
+    <emphasis>Android Standard Development Kit - SDK</emphasis>.</para>
+
+    <para>Descompacte-o com sua ferramenta de <firstterm>unzip</firstterm>
+    favorita em uma pasta da sua escolha; utilizamos a plataforma Linux e a
+    localizaç&#227;o
+    <guimenuitem>/home/giljr/pograms/android</guimenuitem>;</para>
+
+    <para>A configuraç&#227;o dos diretórios aparece na figura abaixo:</para>
+
+    <figure>
+      <title>Diretório de instalaç&#227;o do Android SDK</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/12_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>A próxima etapa é entrar no <emphasis>Eclipse</emphasis> e apontar a
+    localizaç&#227;o do <emphasis>SDK do Android</emphasis> que acabamos de
+    baixar.</para>
+
+    <para>Pressione a figura do pequeno celular <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/celularzinho.gif" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject>;</para>
+
+    <para>Uma tela aparece pedido a sua permiss&#227;o para enviar dados
+    estatísticos de uso da ferramenta &#224; equipe de desenvolvimento
+    do<emphasis> Android</emphasis>; aceite e vá ao menu principal, acesse a
+    tela seguinte pelo caminho <guimenuitem>Windows &gt;
+    Preferences</guimenuitem> e indique o caminho do <emphasis>SDK do
+    Android</emphasis> ao <emphasis>plug-in</emphasis>:</para>
+
+    <figure>
+      <title>Aponte o SDK do Android para que o plug-in o utilize</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/14_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Agora vamos pressionar novamente o bot&#227;o da figura do
+    celularzinho <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/celularzinho.gif" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject> e acessar o Gerenciador SDK e AVD do Android
+    (<emphasis>Android SDK and AVD Manager</emphasis>) na aba Avalable
+    Packages; click no pequeno triângulo para abrir as opç&#245;es de catálogo
+    oferecidos pelo Android e selecione <emphasis role="bold">Google APIs by
+    Google Inc., Android API 7, revision 1</emphasis>, conforme abaixo, e
+    pressione<guimenuitem> Install Selected</guimenuitem>; opcionalmente
+    voc&#234; pode baixar a documentaç&#227;o, para estudos.</para>
+
+    <para></para>
+
+    <figure>
+      <title>Baixando o Pacote Google APIs</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/15_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Ao témino das operaç&#245;es os seguintes pacotes estar&#227;o
+    presentes na aba <guimenuitem>Installed Packages</guimenuitem>:</para>
+
+    <figure>
+      <title>Pacotes disponíveis</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/23a_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Uma tela pedindo para reiniciar o <firstterm>ADB (Android Debugger
+    Bridge)</firstterm> aparece solicitando sua permiss&#227;o para esse
+    servidor; n&#227;o se preocupe agora com o ADB; permita a operaç&#227;o e
+    prossiga...</para>
+
+    <para>Parabéns, sua plataforma android esta instalada !</para>
+
+    <para>Na próxima secç&#227;o vamos apresentar-lhe a sensaç&#227;o de rodar
+    o seu primeiro programa Android no emulador.</para>
+  </section>
+
+  <section>
+    <title>Rodando seu primeiro programa Android</title>
+
+    <para>No Eclipse:<guimenuitem> File &gt; New &gt; Others...&gt; Android
+    &gt; Android Project &gt; Next</guimenuitem>:</para>
+
+    <figure>
+      <title>Iniciar a largada para um novo Projeto Android</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/23_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Criaremos nosso primeiro programa; preencha os espaços conforme
+    figura abaixo:</para>
+
+    <figure>
+      <title>Configure conforme abaixo</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/25_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Observe que n&#227;o utilizaremos o pacote <emphasis
+    role="bold"><emphasis>Google APIs</emphasis></emphasis>, uma vez que
+    n&#227;o usaremos serviços de mapeamentos; selecione apenas o pacote
+    <emphasis>Android 2.1</emphasis></para>
+
+    <para>Pressione <guimenuitem>Next &gt;</guimenuitem>.</para>
+
+    <para>Navegue na estrutura de diretórios criada automaticamente pelo
+    <emphasis>plug-in</emphasis>; vamos analisá-las rapidamente:</para>
+
+    <figure>
+      <title>Estrutura de Diretórios do Aplicativo</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/26_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para><emphasis role="bold">Fontes (em src)</emphasis></para>
+
+    <para>E a estrutura de diretórios das fontes que corresponde ao nome do
+    pacote escolhido no início, nesse caso:
+    <emphasis>gil.jr.android.intro</emphasis>;</para>
+
+    <para>Embora n&#227;o aparece na interface, há um modelo (template) em
+    Java para gerar a classe <emphasis>R.java</emphasis>; essa classe é gerada
+    automaticamente pelo <emphasis>plug-in</emphasis> que compila todos os
+    recursos, contidos no diretório <emphasis role="bold">res</emphasis>, para
+    constantes de números inteiros, facilitando &#224;s outras classes Java
+    acesso a esses recursos.</para>
+
+    <para><emphasis role="bold">gen</emphasis></para>
+
+    <para>Encontramos o arquivo <emphasis>R.Class</emphasis>, compilado
+    automaticamente pelo <emphasis>plug-in</emphasis>; n&#227;o se preocupe
+    agora com esse arquivo; embora seja importante na arquitetura do Android,
+    saiba apenas que é um arquivo gerado automaticamente e permite acesso aos
+    recursos indicados na pasta <emphasis role="bold">res</emphasis>;</para>
+
+    <para><emphasis role="bold">res</emphasis></para>
+
+    <para>Basicamente dá abrigo aos recursos a serem utilizados pelas
+    Atividade: s&#227;o os seguintes:</para>
+
+    <para><emphasis>Recursos desenháveis</emphasis> (drowable): pasta para as
+    images adicionadas ao projeto; no caso, automaticamente, o SDK do Android
+    forneceu o ícone-padr&#227;o do Android;</para>
+
+    <para><emphasis>Recursos de layout</emphasis> (layout): pasta com arquivos
+    em XML que informam como organizar os itens na tela do celular, quando a
+    aplicaç&#227;o for executada, e;</para>
+
+    <para><emphasis>Valores constantes </emphasis>(values): seguindo boas
+    práticas de software as <emphasis>strings</emphasis> utilizadas pelas
+    atividades s&#227;o adicionadas nessa pasta, separando os códigos que
+    tratam dos negócios daqueles referentes &#224; interface; mant&#234;-los
+    fora das fontes torna mais fácil a personalizaç&#227;o da aplicaç&#227;o,
+    como a sua adaptaç&#227;o para outros idiomas;</para>
+
+    <para><emphasis role="bold">Manifesto
+    (AndroidManifest.xml)</emphasis></para>
+
+    <para>É o descritor de instalaç&#227;o do seu aplicativo, que informa ao
+    sistema de compilaç&#227;o do <emphasis>Android</emphasis> aquilo
+    necessário para criar, empacotar (package) e instalar seu programa no
+    telefone celular; possui editor especializado que será descrito em outro
+    capítulo.</para>
+
+    <para>Olhando rapidamente o código-modelo gerado pelo
+    <emphasis>plug-in</emphasis>, vamos analisar alguns pontos:</para>
+
+    <blockquote>
+      <para>package jr.gil.android.intro;</para>
+
+      <para>import android.app.Activity;</para>
+
+      <para>import android.os.Bundle;</para>
+
+      <para></para>
+
+      <para>public class AloAndroid extends Activity {</para>
+
+      <para>/** Called when the activity is first created. */</para>
+
+      <para>@Override</para>
+
+      <para>public void onCreate(Bundle savedInstanceState) {</para>
+
+      <para>super.onCreate(savedInstanceState);</para>
+
+      <para>setContentView(R.layout.main);</para>
+
+      <para>}</para>
+
+      <para>}</para>
+    </blockquote>
+
+    <para>Após as importaç&#245;es dos pacotes básicos necessários, declaramos
+    a classe como filha da classe
+    <emphasis>android.app.Activity</emphasis>.</para>
+
+    <para>O ciclo de vida dessa Atividade é implementada, em parte, pelo
+    método <emphasis>onCreate</emphasis>, que corresponde a chamada automática
+    da plataforma logo na inicializaç&#227;o do aplicativo pelo sistema
+    operacional base; normalmente, aqui, adicionamos códigos que s&#227;o
+    inicializados apenas uma vez;</para>
+
+    <para>O parâmetro <emphasis>savedInstanceState</emphasis>, do tipo
+    android.os.Bundle; é a maneira de transmitir dados entre Atividades;
+    n&#227;o usaremos nesse primeiro exemplo.</para>
+
+    <para>Atente para a linha
+    <emphasis>setContentView(R.loyout.main)</emphasis>:</para>
+
+    <para>Lembra-se que o arquivo <emphasis>R.java</emphasis> é gerado
+    automaticamente e contém refer&#234;ncias em Java para cada um dos
+    recursos adicionados &#224; pasta <emphasis role="bold">res</emphasis> ?
+    pois bem, <emphasis>R.layout.main</emphasis> é uma constante que aponta
+    para o arquivo main.xml; saiba que nunca será necessário editar a classe
+    <emphasis>R.java</emphasis> e que o <emphasis>plug-in</emphasis> se
+    encarrega de alterá-lo conforme se adiciona arquivos a pasta de recursos
+    (<emphasis>res</emphasis>).</para>
+
+    <para>Agora na janela <emphasis>Eclipse Package Explorer</emphasis>,
+    clique duas vezes no arquivo <emphasis>main.xml</emphasis> para abri-lo no
+    editor.</para>
+
+    <figure>
+      <title>Arquivo <emphasis>main.xml</emphasis>, referenciado no código
+      como <emphasis>R.layout.main</emphasis></title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/27_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Perceba que a tag <emphasis>TextView</emphasis> e filha da
+    <emphasis>LinearLayout</emphasis>, ou seja: escolhemos um layout simples
+    em linhas dispostas verticamente
+    (<emphasis>android:orientation="vertical"</emphasis>); apresentaremos,
+    segundo essa configuraç&#227;o, apenas uma caixa de texto, TextView, cujo
+    texto se encontra no caminho @string/hello, que, por sua vez, corresponde
+    a uma das chaves do arquivo
+    <emphasis>res/value/strings.xml;</emphasis></para>
+
+    <para>A única alteraç&#227;o que faremos na base das fontes fornecidas
+    pelo <emphasis>plug-in</emphasis> e no arquivo
+    r<emphasis>es/values/strings.xml</emphasis>;</para>
+
+    <para>Altere as linhas conforme figura abaixo, para personalizarmos nossa
+    primeira investida no robô Android.</para>
+
+    <figure>
+      <title>Alterando o código fonte strings.xml</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/28_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Pronto !</para>
+
+    <para>Vamos ao menu principal do Eclipse <guimenuitem>Run &gt; Run (CRTL +
+    F11);</guimenuitem></para>
+
+    <para>Observe que ocorre um erro e a seguinte tela informa que n&#227;o há
+    nenhum <emphasis>AVD (Android Virtual Device)</emphasis> disponível e se
+    pergunta se deseja criar um; entre com <guimenuitem>Yes</guimenuitem> e
+    prossiga...</para>
+
+    <figure>
+      <title>Aceite a ajuda para criar um AVD</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/29_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>O <emphasis>Aparelho virtual Android - (Android Virtual Device -
+    AVD</emphasis>) é uma instância executável do emulador, que faz &#224;s
+    vezes do aparelho de telefonia celular real; foi desenvolvido e é mantido
+    pelos engenheiros da <trademark>Google</trademark> e foi a grande cartada
+    da empresa, uma vez que, &#224; época do primeiro concurso de programas
+    Android, ainda n&#227;o havia no mercado o <trademark
+    class="registered">T-Mobile G1</trademark>, o primeiro aparelho celular a
+    rodar o sistema operacional <emphasis>Android</emphasis>; confira o
+    <emphasis>Apendice A</emphasis> para tomar conhecimento dos aparelhos de
+    celular compatíveis com o sistema operacional Android, hoje disponíveis no
+    mercado, quando da publicaç&#227;o desse capítulo.</para>
+
+    <para>Configure a instância do emulador como descrito na figura abaixo
+    para criá-lo:</para>
+
+    <figure>
+      <title>Configuraç&#227;o do emulador nomeado como
+      <emphasis>my_avd_android21_7</emphasis></title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/30_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>A próxima tela informa o sucesso da operaç&#227;o e descreve as
+    características do emulador usado para rodar nosso primeiro
+    aplicativo.</para>
+
+    <para>Observamos que esse está baseado somente no Android 2.1 e que
+    n&#227;o consta nesse serviços necessários para rodar aplicativos baseados
+    em serviços de localizaç&#227;o (<emphasis>Location-Based Service -
+    LBS</emphasis>), que será desenvolvido mais adiante, em outro
+    capítulo.</para>
+
+    <figure>
+      <title>Configurado do AVD</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/31_intro.png" scale="60" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Após essa derradeira configuraç&#227;o finalmente o emulador dá a
+    partida...</para>
+
+    <para>Observe o carregamento inicial do emulador, que demanda muitos
+    recursos da <emphasis>plataforma-host</emphasis> e se constitui em um
+    processo relativamente demorado.</para>
+
+    <para>Tenha paci&#234;ncia e ...</para>
+
+    <figure>
+      <title>Inicializaç&#227;o do Emulado: my_avd_android21_7</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/32_intro.png" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Espere até que a apar&#234;ncia do emulado seja simular a tela
+    abaixo:</para>
+
+    <figure>
+      <title></title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/33_intro.png" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Observe na janela <guimenuitem>Console (Windows &gt; Show View &gt;
+    Console - CRTL+SHIFT+QC )</guimenuitem> os seguintes
+    <emphasis>logs</emphasis>, indicando sucesso da instalaç&#227;o do
+    pacotePrimeiroPrograma.apk...</para>
+
+    <blockquote>
+      <para>[2010-01-30 15:13:41 - PrimeiroPrograma]Installing <emphasis
+      role="bold">PrimeiroPrograma.apk...</emphasis></para>
+
+      <para>[2010-01-30 15:13:54 - PrimeiroPrograma] <emphasis
+      role="bold">Success!</emphasis></para>
+
+      <para>[2010-01-30 15:13:54 - PrimeiroPrograma] Starting activity
+      jr.gil.android.intro.AloAndroid on device</para>
+
+      <para>[2010-01-30 15:14:02 - PrimeiroPrograma] ActivityManager:
+      Starting: Intent { cmp=jr.gil.android.intro/.AloAndroid }</para>
+    </blockquote>
+
+    <para>Agora é hora do <emphasis>laser</emphasis> !</para>
+
+    <para>A seguinte tela deve aparecer, apresentado a tela configurada pelo
+    aplicativo:</para>
+
+    <figure>
+      <title>Nosso aplicativo rodando no emulador</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/34_intro.png" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Vamos <quote>browsear</quote> pelo celular (emulador) e descobrir a
+    enormidade de aplicativos pré-build no Android...e lembre-se, só alteramos
+    tr&#234;s linhas de código;</para>
+
+    <para>O poderio da plataforma Android e a aposta da
+    <trademark>Google</trademark> nela e competir com o Simian e IPhone, é
+    demonstrada nesse breve apanhado: pouca coisa exigida diretamente por
+    programaç&#227;o; o arcabouço dos aplicativos, navegabilidade &#224;s
+    diversas Atividades pré-configuradas, s&#227;o disponibilizadas
+    automaticamente: um espetáculo de se v&#234; ! batendo palmas...(depois de
+    colocar o celular no bolso, é claro !?)</para>
+
+    <para>Com essa simples codificaç&#227;o voc&#234; já pode impressionar
+    qualquer um ao lhe apresentar um aparelho rodando
+    <emphasis>Android</emphasis>, cujos códigos voc&#234; mesmo carregou
+    !</para>
+
+    <para>Bom, voltando a navegaç&#227;o, clique no bot&#227;o do trazendo a
+    figura de uma casa <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/botao_casinha.gif" scale="50"
+                     scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject> ; a seguinte tela aparece...</para>
+
+    <figure>
+      <title><emphasis>Front-end</emphasis> da tela do celular</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/35-intro.png" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Agora clique no triangulo envolto por um círculo <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/Abrir_Menu.gif" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject> para trazer as opç&#245;es internas de menu; a
+    seguinte tela se apresenta:</para>
+
+    <figure>
+      <title>Menu interno apresentado</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/35_intro.png" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Perceba que já se apresenta um ícone do nosso aplicativo: Alô
+    Android <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/Menu_aloAndroid.gif" scale="50"
+                     scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject>, conforme configuraç&#227;o - Fig 0?; emule o
+    <emphasis>touch-screen</emphasis> com o ponteiro do
+    <emphasis>mouse</emphasis> e acione a tela de nossa Atividade
+    pressionando-o;</para>
+
+    <para>voc&#234; voltará a figura ??.</para>
+
+    <para>Bom, agora, simulando o fechamento do celular e seu encerramento,
+    pressione a tecla power do celular <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/botao_power.gif" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </inlinemediaobject> e mantenha-a pressionada por alguns
+    segundos...</para>
+
+    <figure>
+      <title></title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/36_intro.png" scale="50" scalefit="1"></imagedata>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Voc&#234; acaba de simular o desligamento do celular.</para>
+
+    <para>Se demora o emulador descarregar, clique no bot&#227;o fechar da
+    janela; dessa maneira <quote>matamos</quote> o processo de maneira mais
+    rápida.</para>
+
+    <para>chegamos assim ao final desse capítulo, onde configuramos nossa
+    plataforma para trabalharmos no Android e analisamos nosso primeiro
+    código; tudo muito fácil e simple: promessa da
+    <trademark>Google</trademark> !</para>
+  </section>
+</chapter>
